@@ -111,7 +111,7 @@ When(/^enter all contactus fields$/, async () => {
     cy.fixture('contactusdata').then(async function (data) {
         formPage.contactUsFormFill(data.name,data.email,data.subject,data.message)
     })
-    formPage.elements.uploadFile().selectFile(`C:\\Workspace\\CypressWorkSpace\\prajyotFramework\\cypress\\fixtures\\example.json`)
+    formPage.elements.uploadFile().selectFile(`cypress/fixtures/example.json`)
     CommonActions.clickElement(formPage.elements.submitButton())
 })
 
