@@ -1,0 +1,41 @@
+{
+  "name": "CYPRESS_POM_CUCUMBER_ALLURE_TYPESCRIPT_FRAMEWORK",
+  "version": "1.0.0",
+  "description": "\"Automation Testing framework using cypress and typescript with allure-report\"",
+  "main": "index.js",
+  "scripts": {
+    "cy:e2e:run": "npm run pretest && npm run cy:run && npm run open_allure_report",
+    "cy:open": "cypress open --config-file cypress.config.ts --env allure=true",
+    "cy:run": "cypress run --config-file cypress.config.ts --env allure=true",
+    "report": "npx allure generate reports/ui/allure-results --clean -o reports/ui/allure-report && allure open reports/ui/allure-report",
+    "allure:generate": "allure generate logs/results/allure-results --clean -o logs/results/allure-report",
+    "allure:open": "allure open logs/results/allure-report",
+    "pretest": "rimraf logs/results/allure-results && rimraf logs/results/allure-report",
+    "open_allure_report": "npm run allure:generate && npm run allure:open"
+  },
+  "keywords": [
+    "cypress",
+    "typescript",
+    "allure",
+    "e2e",
+    "testing",
+    "automation"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prajyot7/CYPRESS_POM_CUCUMBER_ALLURE_TYPESCRIPT_FRAMEWORK.git"
+  },
+  "author": "Prajyot Fulsundar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/prajyot7/CYPRESS_POM_CUCUMBER_ALLURE_TYPESCRIPT_FRAMEWORK/issues"
+  },
+  "homepage": "https://github.com/prajyot7/CYPRESS_POM_CUCUMBER_ALLURE_TYPESCRIPT_FRAMEWORK#readme",
+  "devDependencies": {
+    "@shelex/cypress-allure-plugin": "^2.37.0",
+    "@types/node": "^18.16.3",
+    "allure-commandline": "^2.22.0",
+    "cypress": "^12.11.0",
+    "typescript": "^5.0.4"
+  }
+}

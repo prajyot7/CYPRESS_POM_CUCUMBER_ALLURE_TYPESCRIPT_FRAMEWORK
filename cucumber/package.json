@@ -1,0 +1,33 @@
+{
+  "name": "CYPRESS_POM_CUCUMBER_ALLURE_TYPESCRIPT_FRAMEWORK",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cypress:runner": "cypress open --e2e --browser chrome --env allure=true,allureResultsPath=./logs/results/allure-results",
+    "cypress:execution": "cypress run --spec cypress/e2e/features/* --env allure=true,allureResultsPath=./logs/results/allure-results",
+    "cypress:execution-tags": "cypress run --env tags=@smokeTest,allure=true,allureResultsPath=./logs/results/allure-results",
+    "cypress:execution-allure": "cypress run --env allure=true,allureResultsPath=./logs/results/allure-results",
+    "allure:generate": "allure generate logs/results/allure-results --clean -o logs/results/allure-report",
+    "allure:open": "allure open logs/results/allure-report",
+    "open_allure_report": "npm run allure:generate && npm run allure:open",
+    "execute-tags": "npm run pretest && npm run cypress:execution-tags",
+    "cypress:execu-allure": "npm run pretest && npm run cypress:execution-allure && npm run open_allure_report",
+    "pretest": "rimraf logs/results/allure-results && rimraf logs/results/allure-report",
+    "allure:clear": "rm -r allure-results/ allure-report cypress/screenshots || true",
+    "allure:history": "mv -f allure-report/history allure-results/history && rm -r allure-report || true"
+  },
+  "author": "Prajyot Fulsundar",
+  "license": "ISC",
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^15.0.0",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.1.5",
+    "@cypress/xpath": "^2.0.3",
+    "@shelex/cypress-allure-plugin": "^2.34.0",
+    "cypress": "^12.10.0",
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "cypress-file-upload": "^5.0.8",
+    "esbuild": "^0.17.18",
+    "multiple-cucumber-html-reporter": "^3.0.1"
+  }
+}
