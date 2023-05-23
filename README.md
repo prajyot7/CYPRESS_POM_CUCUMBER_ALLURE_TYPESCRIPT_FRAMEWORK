@@ -9,8 +9,8 @@
 #### Clone Repository
 
 ```bash
-1. git clone https://github.com/prajyot7/WDIO_API_CUCUMBER_JASMINE_TYPESCRIPT_FRAMEWORK.git
-2. Navigate to `WDIO_API_CUCUMBER_JASMINE_TYPESCRIPT_FRAMEWORK`
+1. git clone https://github.com/prajyot7/CYPRESS_POM_CUCUMBER_ALLURE_TYPESCRIPT_FRAMEWORK.git
+2. Navigate to `CYPRESS_POM_CUCUMBER_ALLURE_TYPESCRIPT_FRAMEWORK`
 
 ```
 
